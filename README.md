@@ -1,90 +1,97 @@
-Run Locally
-To run this project on your local system:
+# Testing_And_Deployment
 
-# Clone the repository
-git clone https://github.com/V939271/TDD-TODO.git
-cd TDD-TODO
+This project is a React-based To-Do application developed using Test-Driven Development (TDD) principles. It integrates Jest and React Testing Library for unit and integration testing, and employs GitHub Actions for Continuous Integration and Deployment (CI/CD).
 
-# Install dependencies
+# 🚀 Features
+
+React Application: Built with React, utilizing Hooks and Context API.
+
+Test-Driven Development: Developed using TDD methodology.
+
+Unit & Integration Testing: Implemented with Jest and React Testing Library.
+
+CI/CD Pipeline: Automated workflows using GitHub Actions.
+
+Production Build: Optimized for production deployment.
+DagsHub
+
+# 🛠️ Prerequisites
+
+Ensure you have the following installed:
+
+Node.js
+
+npm
+
+Git
+
+# 📦 Installation
+
+1. Clone the Repository:
+
+git clone https://github.com/charanmailavarapu/week_7_day_4_Testing_And_Deployment.git
+cd week_7_day_4_Testing_And_Deployment
+
+
+2. Install Dependencies:
+
 npm install
 
-# Start the development server
+
+3. Start the Development Server:
+
 npm start
 
-# Run test cases (Jest + React Testing Library)
+
+This will launch the application in your default web browser.
+
+# 🧪 Running Tests
+
+To execute the test suite:
+
 npm test
 
-# Build for production
+
+This command runs the Jest test runner in interactive watch mode.
+
+# 🏗️ Build for Production
+
+To create a production build:
+
 npm run build
 
 
-Application Architecture
+The build artifacts will be stored in the build/ directory.
 
-This project is built with React, using Hooks, Context API, and Test-Driven Development (TDD) with Jest + React Testing Library.
+# ⚙️ Application Architecture
+
+The project structure is as follows:
 
 src/
- ├─ components/
- │   ├─ TaskInput.jsx       # Input field + button for adding tasks
- │   ├─ TaskItem.jsx        # Represents a single task with toggle/remove
- │   ├─ TaskList.jsx        # Displays all tasks or "No tasks" message
- │   └─ *.test.jsx          # Unit tests for each component
- │
- ├─ hooks/
- │   ├─ useTodos.js         # Custom hook for todos (add/toggle/remove)
- │   └─ useTodos.test.js    # Tests for the custom hook
- │
- ├─ context/
- │   └─ TodosContext.js     # Context + Provider for global state (scalable)
- │
- ├─ App.js                  # Main component (uses TaskInput + TaskList)
- ├─ App.test.js             # App-level tests
- ├─ index.js                # Application entry point
- ├─ setupTests.js           # Jest + React Testing Library setup
+├── components/
+│   ├── TaskInput.jsx       # Input field + button for adding tasks
+│   ├── TaskItem.jsx        # Individual task component
+│   ├── TaskList.jsx        # List of tasks
+│   └── ...
+├── context/
+│   ├── TaskContext.jsx     # Context API for task state management
+│   └── ...
+└── App.jsx                 # Main application component
 
 
-Flow:
+# 🔄 CI/CD Pipeline
 
-App uses useTodos (custom hook) for managing todos.
+The project utilizes GitHub Actions for automating workflows:
+DagsHub
 
-TaskInput allows adding tasks.
+CI Workflow: Runs tests on pull requests and pushes to the main branch.
 
-TaskList renders tasks using TaskItem.
+CD Workflow: Deploys the application to a specified environment upon successful tests.
+DEV Community
++1
 
-TodosContext can provide todos globally if scaling is needed.
+These workflows are defined in the .github/workflows/ directory.
 
+# 📄 License
 
-React Hooks & Context API:
-
-🔹 Hooks
-
-useState → stores todos array
-
-useCallback → memoizes add/toggle/remove functions
-
-useTodos (custom hook) → encapsulates todos logic
-
-🔹 Context API
-
-TodosContext created with React.createContext()
-
-TodosProvider wraps the app and shares todos + actions
-
-Components consume context with useContext(TodosContext)
-
-Removes the need for prop drilling and makes the app scalable
-
-Features
-
- Add tasks with a button or Enter key
-
- Toggle completion (strike-through completed tasks)
-
- Remove tasks from the list
-
- Show “No tasks” when the list is empty
-
- Tested with Jest + React Testing Library (components + hook)
-
- Reusable and modular components
-
- Ready for deployment (Netlify/Vercel)
+This project is licensed under the MIT License.
